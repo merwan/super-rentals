@@ -52,7 +52,7 @@ test('should link to contact information', function(assert) {
 test('should filter the list of rentals by city', function(assert) {
   visit('/');
   fillIn('.list-filter input', 'seattle');
-  keyEvent('.list-filter-input', 'keyup', 69);
+  keyEvent('.list-filter input', 'keyup', 69);
 
   andThen(function() {
     assert.equal(find('.listing').length, 1);
@@ -61,7 +61,7 @@ test('should filter the list of rentals by city', function(assert) {
 });
 
 test('should show details for a specific rental', function(assert) {
-  visit('/');
+  visit('/rentals');
   click('a:contains("Grand Old Mansion")');
 
   andThen(function() {
