@@ -49,4 +49,7 @@ export default function() {
       return { data: rentals };
     }
   });
+  this.get('/rentals/:id', function (db, request) {
+    return { data: rentals.find((rental) => request.params.id === rental.id) };
+  });
 }
